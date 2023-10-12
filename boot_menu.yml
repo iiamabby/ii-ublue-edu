@@ -1,5 +1,5 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: iiamabby/ii-ublue-edu
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: startingpoint
