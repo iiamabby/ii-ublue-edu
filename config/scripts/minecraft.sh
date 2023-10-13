@@ -5,7 +5,7 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
-apt get install -y java-17-openjdk
+rpm-ostree install -y java-17-openjdk
 
 mkdir minecraftforge && \
 cd minecraftforge && \
