@@ -12,4 +12,3 @@ cd minecraftforge && \
 wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-mdk.zip" -O temp.zip && \
 unzip temp.zip && \
 rm temp.zip
-cd ~
