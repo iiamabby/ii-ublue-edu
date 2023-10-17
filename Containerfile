@@ -28,6 +28,12 @@ COPY cosign.pub /usr/share/ublue-os/cosign.pub
 COPY --from=ghcr.io/ublue-os/bling:latest /rpms /tmp/bling/rpms
 COPY --from=ghcr.io/ublue-os/bling:latest /files /tmp/bling/files
 
+RUN mkdir minecraftforge && \
+  cd minecraftforge && \
+  wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-mdk.zip" -O temp.zip && \
+  unzip temp.zip && \
+  rm temp.zip && cd ~
+
 # Copy build scripts & configuration
 COPY build.sh /tmp/build.sh
 COPY config /tmp/config/
