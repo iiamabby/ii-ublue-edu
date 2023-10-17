@@ -32,7 +32,7 @@ RUN mkdir minecraftforge && \
   cd minecraftforge && \
   wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-mdk.zip" -O temp.zip && \
   unzip temp.zip && \
-  rm temp.zip &&  mv minecraftforge /usr/share
+  rm temp.zip 
 
 # Copy build scripts & configuration
 COPY build.sh /tmp/build.sh
