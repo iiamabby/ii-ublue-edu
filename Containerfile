@@ -49,7 +49,7 @@ RUN rpm-ostree install -y java-17-openjdk
 RUN export PATH="/usr/lib/jvm/java-17-openjdk-17.0.8.0.7-1.fc38.x86_64/bin:$PATH"
 
 #install minecraft 
-RUN mkdir -p /usr/local/bin/minecraftforge && \
+RUN mkdir ~/usr/local/minecraftforge && \
 cd /usr/local/bin/minecraftforge && \
 wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-mdk.zip" -O temp.zip && \
 unzip temp.zip && \
