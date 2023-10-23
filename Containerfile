@@ -44,7 +44,10 @@ COPY modules /tmp/modules/
 # `yq` is used for parsing the yaml configuration
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
+# Install Java
 RUN rpm-ostree install -y java-17-openjdk
+RUN export PATH="/usr/lib/jvm/java-17-openjdk-17.x.y.z/bin:$PATH"
+
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
     rm -rf /tmp/* /var/* && ostree container commit
