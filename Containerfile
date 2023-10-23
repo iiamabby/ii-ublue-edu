@@ -46,7 +46,14 @@ COPY modules /tmp/modules/
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Install Java
 RUN rpm-ostree install -y java-17-openjdk
-RUN export PATH="/usr/lib/jvm/java-17-openjdk-17.x.y.z/bin:$PATH"
+RUN export PATH="/usr/lib/jvm/java-17-openjdk-17.0.8.0.7-1.fc38.x86_64/bin:$PATH"
+
+#install minecraft 
+RUN mkdir /usr/local/bin/minecraftforge && \
+cd /usr/local/bin/minecraftforge && \
+wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-mdk.zip" -O temp.zip && \
+unzip temp.zip && \
+rm temp.zip
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
